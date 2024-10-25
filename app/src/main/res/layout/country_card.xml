@@ -30,15 +30,15 @@
             android:layout_height="wrap_content"
             android:text="Titolo"
             android:textAppearance="?attr/textAppearanceTitleMedium"
-            />
+            android:textColor="#00BCD4" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Testo secondario che potrebbe anche andare su diverse righe"
             android:textAppearance="?attr/textAppearanceBodyMedium"
-            android:textColor="?android:attr/textColorSecondary"
-            />
+            android:textColor="#F44336" />
 
     </LinearLayout>
 
