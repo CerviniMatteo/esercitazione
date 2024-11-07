@@ -1,17 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#FF56FF">
 
-    <TextView
-        android:id="@+id/testo1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <!-- ScrollView that scrolls beneath the bottom bar -->
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <!-- GridLayout with a single row and wrap_content -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"> <!-- Adjust columns as needed -->
+
+            <!-- First included layout (fully visible) -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include  layout="@layout/activity_pick_a_country"/>
+            </FrameLayout>
+            <!-- Second included layout (hidden initially to the right) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include  layout="@layout/activity_pick_a_country" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <!-- Third included layout (also hidden initially to the right) -->
+                <include layout="@layout/activity_pick_a_country" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Fixed bottom bar above the ScrollView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- FrameLayout occupying 90% of the height -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9">
+        </FrameLayout>
+
+        <!-- TextView occupying 5% of the height -->
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.05"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#00FF45"
+            android:textSize="20sp" />
+
+        <!-- FrameLayout occupying 10% of the height -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1">
+        </FrameLayout>
+    </LinearLayout>
 
 </FrameLayout>

@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "World News"
 include(":app")
- 
+include(":provaMaps")
